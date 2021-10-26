@@ -22,7 +22,7 @@ export default class Pong {
             if (self.t1 === event.keyCode && self.positionY > 0) {
                 //arriba
                 self.positionY -= self.velocity
-            } else if (self.t2 === event.keyCode && self.positionY < 500) {
+            } else if (self.t2 === event.keyCode && self.positionY < 400) {
                 //abajo
                 self.positionY += self.velocity
             }

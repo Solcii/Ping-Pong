@@ -1,9 +1,11 @@
 export default class Ball {
 
-    constructor(pEscenario, pBarra1, pBarra2) {
+    constructor(pEscenario, pBarra1, pBarra2, pMensaje, pJugador) {
         this.barra1 = pBarra1;
         this.barra2 = pBarra2;
         this.escenario = pEscenario;
+        this.mensaje = pMensaje
+        this.jugadorGanador = pJugador
         this.velocidadMax = 10;
 
 
@@ -46,20 +48,6 @@ export default class Ball {
         }
     }
 
-    getPoint() {
-        if (this.div.offsetLeft <= 0) {
-            clearInterval(this.interval)
-            this.escenario.style.backgroundColor = 'rosybrown';
-            alert('gana jugador 2')
-        }
-
-        if (this.div.offsetLeft >= 800) {
-            clearInterval(this.interval)
-            this.escenario.style.backgroundColor = 'royalblue';
-            alert('gana jugador 1')
-        }
-    }
-
     checkStateBall() {
 
         //colisiones con los pong
@@ -77,10 +65,10 @@ export default class Ball {
         //golpeo con la parte de arriba y la parte de abajo del escenario
 
         if (this.direccion === 1) {
-            if (this.div.offsetTop >= 600) this.state = 2;
+            if (this.div.offsetTop >= 500) this.state = 2;
             else if (this.div.offsetTop <= 0) this.state = 1;
         } else {
-            if (this.div.offsetTop >= 600) this.state = 4;
+            if (this.div.offsetTop >= 500) this.state = 4;
             else if (this.div.offsetTop <= 0) this.state = 3;
         }
     }
@@ -104,5 +92,18 @@ export default class Ball {
         return false;
     }
 
+    getPoint() {
+        if (this.div.offsetLeft <= 0) {
+            clearInterval(this.interval)
+            this.mensaje.style.display = 'block';
+            this.jugadorGanador.innerHTML = 'Gana JUGADOR 2'
+        }
+
+        if (this.div.offsetLeft >= 800) {
+            clearInterval(this.interval)
+            this.mensaje.style.display = 'block';
+            this.jugadorGanador.innerHTML = 'Gana JUGADOR 1'
+        }
+    }
 
 }

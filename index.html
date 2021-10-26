@@ -5,16 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego del Pong!</title>
+    <title>Ping Pong! by Solcii</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/ping-pong.ico">
+
 </head>
 
 <body>
+    <div class="jugador1">
+        <h2 class="jugador" id="jugador1">Jugador 1</h2>
+        <img src="images/jugador-1.png" alt="Jugador 1">
+    </div>
+    <div class="jugador2">
+        <h2 class="jugador" id="jugador2">Jugador 2</h2>
+        <img src="images/jugador-2.png" alt="Jugador 2">
+    </div>
+
     <div class="escenario">
         <!-- <div class="pong" id="pong1"></div> -->
         <div class="medio"></div>
+        <div class="medio-circulo"></div>
         <!-- <div class="ball"></div> -->
         <!-- <div class="pong" id="pong2"></div> -->
+        <div class="mensaje-ganador">
+            <div class="mensajes">
+                <p class="jugador-ganador"></p>
+                <p class="felicitaciones">¡Felicitaciones!</p>
+                <button class="reinicio" onclick="location.reload()">Volver a jugar</button>
+            </div>
+        </div>
     </div>
 
 

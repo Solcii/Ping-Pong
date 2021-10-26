@@ -4,20 +4,64 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #BD6A32;
+    margin-top: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.jugador1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.jugador2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.jugador {
+    padding: 15px 0;
+}
+
+#jugador1 {
+    margin-left: 20px;
+}
+
+#jugador2 {
+    margin-right: 20px;
+}
+
 .escenario {
     width: 800px;
-    height: 600px;
+    height: 500px;
     margin: 0 auto;
-    background-color: #000;
+    background-color: #009933;
     position: relative;
+    border: 2px solid white;
 }
 
 .medio {
     height: 100%;
     width: 1px;
-    border-left: 2px dashed #fff;
+    border-left: 2px solid #F3C220;
     position: absolute;
     left: 50%;
+}
+
+.medio-circulo {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #009933;
+    border: 2px solid #F3C220;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    border-radius: 50%;
 }
 
 .pong {
@@ -25,18 +69,19 @@
     height: 100px;
     width: 20px;
     transition: 0.3s;
+    border-radius: 10px;
 }
 
 #pong1 {
     top: 0;
     left: 10px;
-    background-color: royalblue;
+    background-color: #A01E21;
 }
 
 #pong2 {
     top: 0;
     right: 10px;
-    background-color: rosybrown;
+    background-color: #E0282E;
 }
 
 .ball {
@@ -47,4 +92,35 @@
     left: calc(50% - 10px);
     top: calc(50% - 10px);
     border-radius: 50%;
+}
+
+.mensaje-ganador {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    left: calc(50% - 150px);
+    top: calc(50% - 150px);
+    background: #fafafa;
+    display: none;
+}
+
+.mensajes {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.felicitaciones {
+    font-size: 12px;
+    margin: 15px;
+}
+
+.reinicio {
+    font-size: 12px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.reinicio:hover {
+    background: rgb(39, 38, 38);
 }
