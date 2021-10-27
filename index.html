@@ -18,18 +18,33 @@
     <div class="jugador1">
         <h2 class="jugador" id="jugador1">Jugador 1</h2>
         <img src="images/jugador-1.png" alt="Jugador 1">
+        <div class="indicaciones">
+            <p>Arriba</p>
+            <img src="images/Q.png" alt="Tecla Q">
+            <img src="images/A.png" alt="Tecla A">
+            <p>Abajo</p>
+        </div>
     </div>
     <div class="jugador2">
         <h2 class="jugador" id="jugador2">Jugador 2</h2>
         <img src="images/jugador-2.png" alt="Jugador 2">
+        <div class="indicaciones">
+            <p>Arriba</p>
+            <img src="images/Flecha arriba.png" alt="Tecla flecha arriba">
+            <img src="images/Flecha abajo.png" alt="Tecla flecha abajo">
+            <p>Abajo</p>
+        </div>
     </div>
 
-    <div class="escenario">
-        <!-- <div class="pong" id="pong1"></div> -->
-        <div class="medio"></div>
-        <div class="medio-circulo"></div>
-        <!-- <div class="ball"></div> -->
-        <!-- <div class="pong" id="pong2"></div> -->
+    <button class="iniciar-juego">INICIAR JUEGO</button>
+    <div class="contenedor-escenario">
+        <div class="escenario">
+            <!-- <div class="pong" id="pong1"></div> -->
+            <div class="medio"></div>
+            <div class="medio-circulo"></div>
+            <!-- <div class="ball"></div> -->
+            <!-- <div class="pong" id="pong2"></div> -->
+        </div>
         <div class="mensaje-ganador">
             <div class="mensajes">
                 <p class="jugador-ganador"></p>
@@ -38,6 +53,7 @@
             </div>
         </div>
     </div>
+
 
 
     <script src="js/game.js" type="module"></script>

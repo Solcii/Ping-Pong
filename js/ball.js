@@ -1,12 +1,13 @@
 export default class Ball {
 
-    constructor(pEscenario, pBarra1, pBarra2, pMensaje, pJugador) {
+    constructor(pEscenario, pBarra1, pBarra2, pMensaje, pJugador, pInicio) {
         this.barra1 = pBarra1;
         this.barra2 = pBarra2;
         this.escenario = pEscenario;
         this.mensaje = pMensaje
         this.jugadorGanador = pJugador
         this.velocidadMax = 10;
+        this.iniciar = pInicio
 
 
         //Crear elemento
@@ -17,9 +18,12 @@ export default class Ball {
         this.direccion = 1;
         this.state = 2;
 
-        this.interval = setInterval(() => {
-            this.moveBall();
-        }, 30)
+        this.iniciar.addEventListener('click', () => {
+            this.iniciar.style.display = 'none';
+            this.interval = setInterval(() => {
+                this.moveBall();
+            }, 30)
+        })
     }
 
     moveBall() {
@@ -65,22 +69,12 @@ export default class Ball {
         //golpeo con la parte de arriba y la parte de abajo del escenario
 
         if (this.direccion === 1) {
-            if (this.div.offsetTop >= 500) this.state = 2;
+            if (this.div.offsetTop >= 476) this.state = 2;
             else if (this.div.offsetTop <= 0) this.state = 1;
         } else {
-            if (this.div.offsetTop >= 500) this.state = 4;
+            if (this.div.offsetTop >= 476) this.state = 4;
             else if (this.div.offsetTop <= 0) this.state = 3;
         }
-    }
-
-    colisionPong2() {
-        if (this.div.offsetLeft >= 770 - this.barra2.div.clientWidth &&
-            this.div.offsetTop >= this.barra2.div.offsetTop &&
-            this.div.offsetTop <= this.barra2.div.offsetTop + this.barra2.div.clientHeight) {
-            return true
-        }
-        return false;
-
     }
 
     colisionPong1() {
@@ -90,6 +84,15 @@ export default class Ball {
             return true
         }
         return false;
+    }
+    colisionPong2() {
+        if (this.div.offsetLeft >= 770 - this.barra2.div.clientWidth &&
+            this.div.offsetTop >= this.barra2.div.offsetTop &&
+            this.div.offsetTop <= this.barra2.div.offsetTop + this.barra2.div.clientHeight) {
+            return true
+        }
+        return false;
+
     }
 
     getPoint() {

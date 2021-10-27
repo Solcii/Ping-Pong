@@ -4,7 +4,7 @@ export default class Pong {
         this.escenario = pEscenario;
         this.t1 = pT1;
         this.t2 = pT2;
-        this.velocity = 60;
+        this.velocity = 40;
         this.positionY = 0;
 
 
