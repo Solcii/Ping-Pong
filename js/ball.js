@@ -78,7 +78,7 @@ export default class Ball {
     }
 
     colisionPong1() {
-        if (this.div.offsetLeft >= 30 - this.barra1.div.clientWidth &&
+        if (this.div.offsetLeft <= this.barra1.div.clientWidth &&
             this.div.offsetTop >= this.barra1.div.offsetTop &&
             this.div.offsetTop <= this.barra1.div.offsetTop + this.barra1.div.clientHeight) {
             return true
